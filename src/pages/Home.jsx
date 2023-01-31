@@ -18,29 +18,12 @@ const Home = () => {
     getTopRatedMovies(topRatedUrl)
   },[])
 
-/*  const myjson = ["nome": "Raí",
-  "idade": 24,
-  "pais":{
-    "mae": "maria",
-    "pai": "joao"
-  },
-    "nome": "gabriela",
-    "idade": "30",
-    "pais": {
-      "mae": "Ana",
-      "pai": "Marcos"
-    }]   */
-    
-  const frutas = [{id:1, nome:'Rai'},{id:2, nome:'Gabi'}]
-
 
 
   return (
     <div>{topMovies && topMovies.map((movies) => <p key={movies.id}>{movies.title}</p>)}
     <br></br>
-    <p>{frutas.map((item) => item.nome)}</p>
-
-
+   
     </div>
    
     
