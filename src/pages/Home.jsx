@@ -18,12 +18,30 @@ const Home = () => {
     getTopRatedMovies(topRatedUrl)
   },[])
 
+  const obj = {
+  "nome": "Rai",
+  "endereco":{
+    "Rua":"Lua",
+    "numero": 45
+  }
+  }
 
+  
 
   return (
     <div>{topMovies && topMovies.map((movies) => <p key={movies.id}>{movies.title}</p>)}
     <br></br>
-   
+    {
+      Object.values(obj).forEach(function(values){
+        if(typeof values == 'object'){
+            Object.values(values).forEach(function(val){
+              <span>{val}</span>
+            })
+        }else{
+          <span>{values}</span>
+        }
+      })
+    }
     </div>
    
     
