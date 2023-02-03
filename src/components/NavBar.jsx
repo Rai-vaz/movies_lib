@@ -1,18 +1,17 @@
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { useState} from 'react'
-import { useNavigation } from "react-router-dom";
 import {BiCameraMovie, BiSearchAlt2} from 'react-icons/bi'
 import '../css/NavBar.css'
 
 
 export const NavBar = () => {
   const [search, setSearch] = useState('');
-  const navigate = useNavigation();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if(!search) return
-    navigate(`/search?q=${search}`)
+    navigate(`/search`)
     setSearch('')
   }
 
