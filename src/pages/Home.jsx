@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+import MovieCard from "../components/MovieCard"
+import '../css/MovieGrid.css'
 
 
 const Home = () => {
@@ -17,31 +19,16 @@ const Home = () => {
     const topRatedUrl = `${moviesURL}top_rated?${apiKey}`
     getTopRatedMovies(topRatedUrl)
   },[])
-
-  const obj = {
-  "nome": "Rai",
-  "endereco":{
-    "Rua":"Lua",
-    "numero": 45
-  }
-  }
-
-  
-
+console.log(topMovies)
   return (
-    <div>{topMovies && topMovies.map((movies) => <p key={movies.id}>{movies.title}</p>)}
-    <br></br>
-    {
-      Object.values(obj).forEach(function(values){
-        if(typeof values == 'object'){
-            Object.values(values).forEach(function(val){
-              <span>{val}</span>
-            })
-        }else{
-          <span>{values}</span>
-        }
-      })
-    }
+    <div className="container">
+      <h2 className="title">Melhores filmes:</h2>
+      <div className="movies-container">
+        {topMovies === 0 && <p> carregando... </p>}
+        {topMovies.length > 0 && topMovies.map((movies) => <MovieCard movie={movies} key={movies.id}/> )}
+
+      </div>
+    
     </div>
    
     
