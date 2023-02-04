@@ -26,6 +26,10 @@
     padding: .5rem;
 }
 
+.movies-container .movie-card:hover{
+    border: 1px solid #f7d354;
+}
+
 .movies-container div img{
     max-width: 100%;
 }
@@ -36,7 +40,22 @@
     margin-bottom: 1rem;
 }
 
+.quantTitulos{
+    width: 100vw;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
 .movies-container div svg{
+    color: #f7d354;
+}
+
+.quantTitulos p{
+    font-size: 1.5rem;
+}
+
+.quantTitulos span{
+    margin-left: 5px;
     color: #f7d354;
 }
 

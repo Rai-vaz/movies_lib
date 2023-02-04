@@ -11,7 +11,7 @@ export const NavBar = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if(!search) return
-    navigate(`/search`)
+    navigate(`/search?q=${search}`)
     setSearch('')
   }
 
